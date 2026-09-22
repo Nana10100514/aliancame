@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+  <meta name="theme-color" content="#000000">
+  <title>Alien Camera</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <video id="camera" autoplay muted playsinline></video>
+
+  <main id="stage">
+    <canvas id="view" aria-label="宇宙人を指で動かして撮影"></canvas>
+
+    <button
+      id="startButton"
+      class="icon-button start-button"
+      aria-label="カメラや画像の読み込みを再試行"
+      hidden
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h5l2-3h4l2 3h5v13H3z"/>
+        <circle cx="12" cy="13" r="4"/>
+      </svg>
+    </button>
+
+    <button
+      id="shootButton"
+      aria-label="写真を撮る"
+      disabled
+    ></button>
+
+    <div id="flash" aria-hidden="true"></div>
+
+    <section id="preview" aria-label="撮影した写真" hidden>
+      <img id="resultImage" alt="宇宙人と撮影した写真">
+
+      <button
+        id="closeButton"
+        class="icon-button close-button"
+        aria-label="カメラに戻る"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18"/>
+        </svg>
+      </button>
+
+      <a
+        id="saveButton"
+        class="icon-button save-button"
+        download="alien-photo.png"
+        aria-label="写真を保存"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/>
+        </svg>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
